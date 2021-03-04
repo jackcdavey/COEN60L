@@ -1,0 +1,18 @@
+a:visited{
+	color:black;
+}
+a:link{
+	color: blue;
+}
+
+p.visited{
+	color: red;
+}
+
+a.linkTest{
+	display: none;
+}
+
+p.notVisited{
+	color: blue;
+}

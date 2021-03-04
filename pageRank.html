@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+
+	<script>
+		var initY = 0.5;
+		var initA = 0.25;
+		var initM = 0.25;
+
+
+		//20 iterations
+		var newA=initY/2+initM;
+		var	newM=initA/2;
+		var newY=initA/2+initY/2;
+
+		console.log("Initial Values:");
+		console.log("newY= "+newY);
+		console.log("newA= "+newA);
+		console.log("newM= "+newM);
+		console.log("");
+
+		var convergeCount=0;
+		var converged=false;
+	for(var i=0; i<=20; i++){
+		convergeCount++;
+		if(converged==false){
+		a=newY/2+newM;
+		m=newA/2;
+		y=newA/2+newY/2;
+
+		var yDiff=(newY-y)*(newY-y);
+		var aDiff=(newA-a)*(newA-a);
+		var mDiff=(newM-m)*(newM-m);
+		var conv = yDiff+aDiff+mDiff;
+		
+		if(conv<=0.001){
+			
+			console.log("Converged at " + convergeCount + " with 20 iterations");
+			console.log("y= "+y);
+			console.log("a= "+a);
+			console.log("m= "+m);
+			console.log("");
+			converged = true;
+		}
+	
+		newA=a;
+		newM=m;
+		newY=y;
+		
+	}
+}
+
+
+
+
+	//100 iterations
+	convergeCount=0;
+	converged = false;
+	var newA=initY/2+initM;
+	var	newM=initA/2;
+	var newY=initA/2+initY/2;
+	for(var i=0; i<=20; i++){
+		convergeCount++;
+		if(converged==false){
+		a=newY/2+newM;
+		m=newA/2;
+		y=newA/2+newY/2;
+
+		var yDiff=(newY-y)*(newY-y);
+		var aDiff=(newA-a)*(newA-a);
+		var mDiff=(newM-m)*(newM-m);
+		var conv = yDiff+aDiff+mDiff;
+		
+		if(conv<=0.001){
+			
+			console.log("Converged at " + convergeCount + " with 100 iterations");
+			console.log("y= "+y);
+			console.log("a= "+a);
+			console.log("m= "+m);
+			console.log("");
+			converged = true;
+		}
+	
+		newA=a;
+		newM=m;
+		newY=y;
+		
+	}
+}
+	
+	</script>
+
+</body>
+
+</html>

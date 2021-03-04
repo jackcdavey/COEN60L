@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="Lab8Style.css">
+</head>
+
+<body onload="checkVisited()">
+	<div id="visitedLinks">
+		<p class="visited">You have visited:</p>
+	</div>
+
+	<div id="notVisitedLinks">
+		<p class="notVisited">You haven't visited:</p>
+	</div>
+
+
+	<a class="linkTest" href="http://www.scu.edu">http://www.scu.edu</a>
+	<a class="linkTest" href="http://www.cnn.com">http://www.cnn.com</a>
+	<a class="linkTest" href="http://www.apple.com">http://www.apple.com</a>
+	<a class="linkTest" href="http://www.google.com">http://www.google.com</a>
+
+
+	<script>
+		function checkVisited(){
+			var x=document.querySelectorAll('a');
+			for(var i=0; i<x.length; i++){
+				//alert(window.getComputedStyle(x[i], "visited").color);
+			var link = document.createElement("p");
+			link.innerHTML = x[i];
+			if(window.getComputedStyle(x[i], "visited").color == "rgb(0, 0, 0)")
+				document.getElementById("visitedLinks").appendChild(link);
+			else
+				document.getElementById("notVisitedLinks").appendChild(link);
+			
+			}
+		}
+	</script>
+
+</body>
+
+</html>
